@@ -1,0 +1,29 @@
+<template name="home">
+  <div class="container">
+  <header>
+    <h1>Fantasy Auction 2015</h1>
+  </header>
+
+  <h3>League Table</h3>
+  <ol id="participants">
+    {{#each participants}}
+      {{> participant}}
+    {{/each}}
+  </ol>
+
+  <h3>Players</h3>
+  <ul id="players">
+    {{#each players}}
+      {{> player}}
+    {{/each}}
+  </ul>
+
+  <h3>Clubs</h3>
+  <ul id="clubs">
+    {{#each clubs}}
+      {{> club}}
+    {{/each}}
+  </ul>
+
+</div>
+</template>
