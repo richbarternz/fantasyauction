@@ -5,6 +5,7 @@
     {{> loginButtons}}
   </header>
 
+  {{#if currentUser}}
   <h2>League set up</h2>
 
   <form class="new-league form-inline" role="form">
@@ -79,6 +80,9 @@
       {{/each}}
     </tbody>
   </table>
-
+  {{else}}
+  <h2>Get started</h2>
+  <p>Play The Sun's classic Dreamteamfc fantasy football game against friends and family, in private leagues, in the exciting and challenging <strong>auction format</strong>. To start playing sign in or create an account above.</p>  
+  {{/if}}
 </div>
 </template>
