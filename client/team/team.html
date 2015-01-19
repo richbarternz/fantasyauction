@@ -1,0 +1,15 @@
+<template name="team">
+  <li>
+  	<button class="delete">&times;</button>
+    <span class="text">{{participant_name}} - {{player_name}} - £{{price_paid}}m</span>   
+  </li>
+</template>
+
+
+<template name="participantselector">
+  <option value="{{_id}}">{{display_name}}</option>
+</template>
+
+<template name="playerselector">
+  <option value="{{_id}}">{{fullname}}</option>
+</template>

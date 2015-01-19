@@ -1,3 +1,5 @@
+Meteor.subscribe("players");
+
 Template.player.helpers({
   club_name: function() {
     club = Clubs.findOne({_id: this.club_id});
@@ -13,13 +15,8 @@ Template.dashboard.events({
         club_id = event.target.clubname.value,
         price_cost = event.target.price_cost.value;                                                                  
 
-    Players.insert({
-      position: position,
-      fullname: fullname,
-      club_id: club_id,
-      price_cost: price_cost,
-      createdAt: new Date()
-    });
+ // here
+     Meteor.call("addPlayer", position, fullname, club_id, price_cost);
 
     // Clear form
     event.target.position.value = "",
@@ -32,6 +29,6 @@ Template.dashboard.events({
 
 Template.dashboard.events({
   "click .delete": function () {
-    Players.remove(this._id);
+    Meteor.call("deletePlayer", this._id);
   }
 });

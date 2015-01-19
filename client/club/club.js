@@ -1,3 +1,5 @@
+Meteor.subscribe("clubs");
+
 Template.dashboard.events({
   "submit .new-club": function (event) {
 

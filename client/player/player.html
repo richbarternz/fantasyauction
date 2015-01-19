@@ -1,6 +1,10 @@
 <template name="player">
-  <li>
-    <button class="delete">&times;</button>
-    <span class="text">{{position}} - {{fullname}} (£{{price_cost}}m) - {{club_name}}</span>
-  </li>
+  <tr>
+    <td><button class="delete">&times;</button></td>
+    <td>{{fullname}}</td>    
+    <td>{{position}}</td>
+    <td>{{club_name}}</td>    
+    <td>{{price_cost}}m</td>    
+    <td></td>
+  </tr>
 </template>

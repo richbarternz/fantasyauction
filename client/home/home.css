@@ -1,1 +1,17 @@
-#clubs button, #players button, #participants button { display:none; }
+#home button.delete {display: none;}
+
+.btn-create {
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #4cae4c;
+}
+
+.btn-join {
+	color: #fff;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+
+#home .btn {vertical-align: bottom;}
+
+.form-group { margin-top: 10px;}

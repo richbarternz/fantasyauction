@@ -4,46 +4,6 @@
     <h1>Fantasy Football Auction :: Admin Dashboard</h1>
   </header>
 
-  <!-- ###### PARTICIPANTS ###### -->
-
-  <form class="new-participant form-inline" role="form">
-    <h2>Add a participant</h2>
-      <div class="form-group">
-        <div class="input-group">
-          <label for="displayname" class="sr-only">Display name</label>
-          <input type="text" name="displayname" id="displayname" placeholder="Display Name" class="form-control" />          
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">  
-          <label for="firstname" class="sr-only">First name</label>
-          <input type="text" name="firstname" id="firstname" placeholder="First Name" class="form-control" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">  
-          <label for="lastname" class="sr-only">Last name</label>
-          <input type="text" name="lastname" placeholder="Last Name" class="form-control" />
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="input-group">
-          <label class="sr-only" for="email">Email address</label>
-          <div class="input-group-addon">@</div>
-          <input type="email" class="form-control" id="email" placeholder="Enter email">
-        </div>
-      </div>
-    
-    <button type="submit" class="btn btn-default">Submit</button>
-  </form>
-
-  <h3>Participants</h3>
-  <ul>
-    {{#each participants}}
-      {{> participant}}
-    {{/each}}
-  </ul>
-
 <!-- ###### PLAYERS ###### -->
 
 <form class="new-player form-inline" role="form">
@@ -85,6 +45,54 @@
   <ul>
     {{#each players}}
       {{> player}}
+    {{/each}}
+  </ul>
+
+  <!-- ###### TEAMS ###### -->
+
+  <form class="new-team form-inline" role="form">
+    <h2>Add a Team</h2>
+      <div class="form-group">
+        <div class="input-group">  
+          <label for="participantname" class="sr-only">Owner</label>
+          <select id="participantname">
+            {{#each participants}}
+              {{> participantselector}}
+            {{/each}}
+          </select>  
+        </div>
+      </div>  
+      <div class="form-group">
+        <div class="input-group">  
+          <label for="playername" class="sr-only">Player</label>
+          <select id="playername">
+            {{#each players}}
+              {{> playerselector}}
+            {{/each}}
+          </select>  
+        </div>
+      </div> 
+      <div class="form-group">
+        <div class="input-group">  
+          <label for="pricepaid" class="sr-only">Price Paid</label>
+          <input type="text" class="form-control" name="pricepaid" id="pricepaid" placeholder="Paid £">
+        </div>
+      </div> 
+      <div class="form-group">
+        <div class="input-group">  
+          <label for="twbought" class="sr-only">TW Bought</label>
+          <input type="text" class="form-control" name="twbought" id="twbought" placeholder="TW Bought">
+        </div>
+      </div>     
+
+    
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+
+  <h3>Teams</h3>
+  <ul>
+    {{#each teams}}
+      {{> team}}
     {{/each}}
   </ul>
 

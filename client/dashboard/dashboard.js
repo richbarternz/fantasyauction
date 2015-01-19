@@ -1,9 +1,9 @@
 Template.dashboard.helpers({
-  participants: function () {
-    return Participants.find({});
-  },
   players: function () {
     return Players.find({});
+  },
+  teams: function () {
+    return Teams.find({});
   },
   clubs: function () {
     return Clubs.find({});

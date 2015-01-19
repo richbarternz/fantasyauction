@@ -1,0 +1,40 @@
+<template name="auction">
+  <div class="container">
+  <header>
+    <h1>Fantasy Auction 2015</h1>
+    {{> loginButtons}} | <a href="/">Home</a>
+  </header>
+
+  <h2>{{current_league_name}}</h2>
+  <h3>Join code: {{current_league_id}}</h3>
+  <p>Members: 
+      {{#each current_league_users}}
+        {{> user}}
+      {{/each}}
+  </p>
+
+  <h2>My Team</h2>
+  <p>TO DO</p>
+
+  <h2>Players</h2>
+  <table id="players" class="table table-condensed">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Player</th>        
+        <th>Pos</th>
+        <th>Club</th>          
+        <th>Price</th>  
+        <th>Pts</th>   
+        <th>GW Pts</th>   
+      </tr>
+    </thead>
+    <tbody>
+      {{#each players}}
+        {{> player}}
+      {{/each}}
+    </tbody>
+  </table>  
+
+</div>
+</template>

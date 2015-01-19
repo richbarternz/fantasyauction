@@ -1,29 +1,84 @@
 <template name="home">
-  <div class="container">
+  <div id="home" class="container">
   <header>
     <h1>Fantasy Auction 2015</h1>
+    {{> loginButtons}}
   </header>
 
-  <h3>League Table</h3>
-  <ol id="participants">
-    {{#each participants}}
-      {{> participant}}
-    {{/each}}
-  </ol>
+  <h2>League set up</h2>
 
-  <h3>Players</h3>
-  <ul id="players">
-    {{#each players}}
-      {{> player}}
-    {{/each}}
-  </ul>
+  <form class="new-league form-inline" role="form">
 
-  <h3>Clubs</h3>
-  <ul id="clubs">
-    {{#each clubs}}
-      {{> club}}
+      <div class="form-group">
+        <div class="input-group">
+          <label for="leaguename">Create new league</label>
+          <input type="text" name="leaguename" id="leaguename" placeholder="League name" class="form-control" />          
+        </div>
+      </div>
+
+    <button type="submit" class="btn btn-create">Create</button>
+
+  </form>
+
+  <form class="join-league form-inline" role="form">
+
+      <div class="form-group">
+        <div class="input-group">
+          <label for="leagueid">Join an existing league</label>
+          <input type="text" name="leagueid" id="leagueid" placeholder="Enter league code" class="form-control" />          
+        </div>
+      </div>
+
+    <button type="submit" class="btn btn-join">Join</button>
+
+  </form>
+
+
+  <h2>My leagues</h2>
+  <table id="leagues" class="table table-condensed">
+    <thead>
+      <tr>        
+        <th>Name</th>
+        <th>Owner</th>
+        <th>Members</th>    
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each my_leagues}}
+        {{> league}}
+      {{/each}}
+    </tbody>
+  </table>  
+
+<!--
+
+  <h3>My Team</h3>
+  <ol id="teams">
+    {{#each teams}}
+      {{> team}}
     {{/each}}
-  </ul>
+  </ol>-->
+
+  <h2>Players</h2>
+  <table id="players" class="table table-condensed">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Player</th>        
+        <th>Pos</th>
+        <th>Club</th>          
+        <th>Price</th>  
+        <th>Pts</th>   
+        <th>GW Pts</th>   
+      </tr>
+    </thead>
+    <tbody>
+      {{#each players}}
+        {{> player}}
+      {{/each}}
+    </tbody>
+  </table>
 
 </div>
 </template>
