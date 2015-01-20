@@ -31,11 +31,6 @@ if (Meteor.isServer) {
     return Meteor.users.find({});
   });   
 
-  Accounts.onCreateUser(function(options, user){
-      user.league_ids = [];
-      return user;
-  });  
-
   Meteor.startup(function () {
     if (Clubs.find().count() === 0) {
       Clubs.insert({club_name: "Arsenal"});
