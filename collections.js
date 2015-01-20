@@ -3,12 +3,6 @@ Leagues = new Mongo.Collection("leagues");
 Teams = new Mongo.Collection("teams");
 Players = new Mongo.Collection("players");
 
-Router.map(function(){
-    this.route('home', {path: '/'} );
-    this.route('dashboard');
-    this.route('auction');
-});
-
 if (Meteor.isServer) {
   Meteor.startup(function () {
     if (Clubs.find().count() === 0) {
