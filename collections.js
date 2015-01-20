@@ -10,27 +10,6 @@ Router.map(function(){
 });
 
 if (Meteor.isServer) {
-
-  Meteor.publish("clubs", function () {
-    return Clubs.find();
-  });
-
-  Meteor.publish("leagues", function () {
-    return Leagues.find();
-  });
-
-  Meteor.publish("players", function () {
-    return Players.find();
-  });  
-
-   Meteor.publish("teams", function () {
-    return Teams.find();
-  });   
-
-  Meteor.publish("users", function () {
-    return Meteor.users.find({});
-  });   
-
   Meteor.startup(function () {
     if (Clubs.find().count() === 0) {
       Clubs.insert({club_name: "Arsenal"});
